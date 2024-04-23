@@ -1,5 +1,5 @@
-alert tcp $LOLKA_SERVER any ->  $TELEPORT_SERVER any (msg:"TCP traffic to $TELEPORT_SERVER detected"; sid:1000001; rev:1;)
+#alert tcp $LOLKA_SERVER any ->  $TELEPORT_SERVER any (msg:"TCP traffic to $TELEPORT_SERVER detected"; sid:1000001; rev:1;)
 
-alert udp $LOLKA_SERVER any ->  $TELEPORT_SERVER !$DNS_PORTS (msg:"UDP traffic to $TELEPORT_SERVER  detected"; sid:1000002; rev:1;)
+#alert udp $LOLKA_SERVER any ->  $TELEPORT_SERVER !$DNS_PORTS (msg:"UDP traffic to $TELEPORT_SERVER  detected"; sid:1000002; rev:1;)
 
-alert icmp !$LOLKA_SERVER any -> $TELEPORT_SERVER any (msg:"ICMP traffic to $TELEPORT_SERVER detected"; sid:1000003; rev:1;)
+alert icmp $LOLKA_SERVER any -> $TELEPORT_SERVER any (msg:"ICMP traffic to $TELEPORT_SERVER detected"; sid:1000003; rev:1;)
