@@ -10,6 +10,6 @@ alert tcp $DNS_SERVERS !$DNS_SERVER_PORTS ->  any !$DNS_SERVER_PORTS (msg:"TCP t
 
 alert icmp $DNS_SERVERS any -> any !$ZABBIX_SERVERS (msg:"ICMP traffic from $DNS_SERVERS detected"; sid:1000006; rev:1;)
 
-alert udp $DNS_SERVERS any ->  any $DNS_SERVER_PORTS_ALL (msg:"UDP traffic from $DNS_SERVERS detected"; sid:1000007; rev:1;)
+# alert udp $DNS_SERVERS any ->  any $DNS_SERVER_PORTS_ALL (msg:"UDP traffic from $DNS_SERVERS detected"; sid:1000007; rev:1;)
 
-alert tcp $DNS_SERVERS any ->  any $DNS_SERVER_PORTS_ALL (msg:"TCP traffic from $DNS_SERVERS detected"; sid:1000008; rev:1;)
+# alert tcp $DNS_SERVERS any ->  any $DNS_SERVER_PORTS_ALL (msg:"TCP traffic from $DNS_SERVERS detected"; sid:1000008; rev:1;)
