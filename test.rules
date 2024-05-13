@@ -4,12 +4,8 @@ alert udp $LOLKA_SERVER any ->  $TELEPORT_SERVER !$DNS_PORTS (msg:"UDP traffic t
 
 alert icmp $LOLKA_SERVER any -> $TELEPORT_SERVER any (msg:"ICMP traffic to $TELEPORT_SERVER detected"; sid:1000003; rev:1;)
 
-alert udp $DNS_SERVERS !$DNS_SERVER_PORTS ->  any !$DNS_SERVER_PORTS (msg:"UDP traffic from $DNS_SERVERS detected"; sid:1000004; rev:1;)
+alert udp $DNS_SERVERS !$DNS_SERVER_PORTS ->  !ALLOWED_SERVERS !$DNS_SERVER_PORTS (msg:"UDP traffic from $DNS_SERVERS detected"; sid:1000004; rev:1;)
 
-alert tcp $DNS_SERVERS !$DNS_SERVER_PORTS ->  any !$DNS_SERVER_PORTS (msg:"TCP traffic from $DNS_SERVERS detected"; sid:1000005; rev:1;)
+alert tcp $DNS_SERVERS !$DNS_SERVER_PORTS ->  !ALLOWED_SERVERS !$DNS_SERVER_PORTS (msg:"TCP traffic from $DNS_SERVERS detected"; sid:1000005; rev:1;)
 
-alert icmp $DNS_SERVERS any -> any !$ZABBIX_SERVERS (msg:"ICMP traffic from $DNS_SERVERS detected"; sid:1000006; rev:1;)
-
-# alert udp $DNS_SERVERS any ->  any $DNS_SERVER_PORTS_ALL (msg:"UDP traffic from $DNS_SERVERS detected"; sid:1000007; rev:1;)
-
-# alert tcp $DNS_SERVERS any ->  any $DNS_SERVER_PORTS_ALL (msg:"TCP traffic from $DNS_SERVERS detected"; sid:1000008; rev:1;)
+alert icmp $DNS_SERVERS any -> !$ZABBIX_SERVERS any (msg:"ICMP traffic from $DNS_SERVERS detected"; sid:1000006; rev:1;)
