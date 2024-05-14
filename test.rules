@@ -18,7 +18,7 @@ alert icmp $STATUS_SERVERS any -> any any (msg:"ICMP traffic from $STATUS_SERVER
 
 alert udp $BTW_SERVERS any -> !$BTW_ALLOWED_SERVERS !$BTW_ALLOWED_PORTS (msg:"UDP traffic from $BTW_SERVERS detected"; sid:1000010; rev:1;)
 
-alert tcp $BTW_SERVERS any -> !$BTW_ALLOWED_SERVERS !$BTW_ALLOWED_PORTS (msg:"TCP traffic from $BTW_SERVERS detected"; sid:1000011; rev:1;)
+alert tcp $BTW_SERVERS !$BTW_ALLOWED_PORTS -> !$BTW_ALLOWED_SERVERS any (msg:"TCP traffic from $BTW_SERVERS detected"; sid:1000011; rev:1;)
 
 alert icmp $BTW_SERVERS any -> any any (msg:"ICMP traffic from $BTW_SERVERS detected"; sid:1000012; rev:1;)
 
