@@ -15,3 +15,10 @@ alert udp $STATUS_SERVERS any -> !$STATUS_ALLOWED_SERVERS !$STATUS_ALLOWED_PORTS
 alert tcp $STATUS_SERVERS any -> any any (msg:"TCP traffic from $STATUS_SERVERS detected"; sid:1000008; rev:1;)
 
 alert icmp $STATUS_SERVERS any -> any any (msg:"ICMP traffic from $STATUS_SERVERS detected"; sid:1000009; rev:1;)
+
+alert udp $BTW_SERVERS any -> any any (msg:"UDP traffic from $STATUS_SERVERS detected"; sid:1000010; rev:1;)
+
+alert tcp $BTW_SERVERS any -> any any (msg:"TCP traffic from $STATUS_SERVERS detected"; sid:1000011; rev:1;)
+
+alert icmp $BTW_SERVERS any -> any any (msg:"ICMP traffic from $STATUS_SERVERS detected"; sid:1000012; rev:1;)
+
