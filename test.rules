@@ -28,7 +28,7 @@ alert udp $WAZUH_SERVERS any -> !$WAZUH_ALLOWED_SERVERS !$WAZUH_ALLOWED_PORTS (m
 
 alert icmp $WAZUH_SERVERS any -> !$WAZUH_ALLOWED_SERVERS any (msg:"ICMP traffic from $WAZUH_SERVERS detected"; sid:1000015; rev:1;)
 
-alert tcp $NGINX_SERVERS !$WAZUH_ALLOWED_PORTS -> !$NGINX_ALLOWED_SERVERS !$NGINX_ALLOWED_PORTS (msg:"TCP traffic from $NGINX_SERVERS detected"; sid:1000016; rev:1;)
+alert tcp $NGINX_SERVERS !$NGINX_ALLOWED_PORTS -> !$NGINX_ALLOWED_SERVERS !$NGINX_ALLOWED_PORTS (msg:"TCP traffic from $NGINX_SERVERS detected"; sid:1000016; rev:1;)
 
 alert udp $NGINX_SERVERS any -> !$NGINX_ALLOWED_SERVERS !$NGINX_ALLOWED_PORTS (msg:"UDP traffic from $NGINX_SERVERS detected"; sid:1000017; rev:1;)
 
