@@ -8,7 +8,7 @@ alert udp $DNS_SERVERS !$DNS_SERVER_PORTS -> !$DNS_ALLOWED_SERVERS !$DNS_SERVER_
 
 alert tcp $DNS_SERVERS !$DNS_SERVER_PORTS -> !$DNS_ALLOWED_SERVERS !$DNS_SERVER_PORTS (msg:"TCP traffic from $DNS_SERVERS detected"; sid:1000005; rev:1;)
 
-alert icmp $DNS_SERVERS any -> !$ZABBIX_SERVERS any (msg:"ICMP traffic from $DNS_SERVERS detected"; sid:1000006; rev:1;)
+alert icmp $DNS_SERVERS any -> !$ZABBIX_SERVER any (msg:"ICMP traffic from $DNS_SERVERS detected"; sid:1000006; rev:1;)
 
 alert udp $STATUS_SERVERS any -> !$STATUS_ALLOWED_SERVERS !$STATUS_ALLOWED_PORTS (msg:"UDP traffic from $STATUS_SERVERS detected"; sid:1000007; rev:1;)
 
