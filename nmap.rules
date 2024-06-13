@@ -56,13 +56,13 @@ alert ip any any -> any any (msg:"POSSBL SCAN NMAP FRAGM (type -f)"; fragbits:M;
 # MetaSploit / Meterpreter / NetCat associated port 4444 connection attempts:
 
 # TCP source port: 4444
-alert tcp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL TCP"; classtype:trojan-activity; sid:1000016; priority:1; rev:1;)
+alert tcp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL TCP"; classtype:trojan-activity; sid:1100016; priority:1; rev:1;)
 
 # UDP source port: 4444
-alert udp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL UDP"; classtype:trojan-activity; sid:1000017; priority:1; rev:1;)
+alert udp any 4444 -> any any (msg:"POSSBL SCAN M-SPLOIT R.SHELL UDP"; classtype:trojan-activity; sid:1100017; priority:1; rev:1;)
 
 # TCP destination port: 4444
-alert tcp any any -> any 4444 (msg:"POSSBL SCAN M-SPLOIT B.SHELL TCP"; classtype:trojan-activity; sid:1000018; priority:1; rev:2;)
+alert tcp any any -> any 4444 (msg:"POSSBL SCAN M-SPLOIT B.SHELL TCP"; classtype:trojan-activity; sid:1100018; priority:1; rev:2;)
 
 # UDP destination port: 4444
-alert udp any any -> any 4444 (msg:"POSSBL SCAN M-SPLOIT B.SHELL UDP"; classtype:trojan-activity; sid:1000019; priority:1; rev:2;)
+alert udp any any -> any 4444 (msg:"POSSBL SCAN M-SPLOIT B.SHELL UDP"; classtype:trojan-activity; sid:1100019; priority:1; rev:2;)
