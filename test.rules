@@ -27,3 +27,15 @@ alert tcp $NGINX_SERVERS !$NGINX_ALLOWED_PORTS -> !$NGINX_ALLOWED_SERVERS !$NGIN
 alert udp $NGINX_SERVERS any -> !$NGINX_ALLOWED_SERVERS !$NGINX_ALLOWED_PORTS (msg:"UDP traffic from $NGINX_SERVERS detected"; sid:1000017; rev:1;)
 
 alert icmp $NGINX_SERVERS any -> !$ZABBIX_SERVERS any (msg:"ICMP traffic from $NGINX_SERVERS detected"; sid:1000018; rev:1;)
+
+alert tcp $GITLAB_RUNNERS any -> any any (msg:"TCP traffic from $GITLAB_RUNNERS detected"; sid:1000019; rev:1;)
+
+alert udp $GITLAB_RUNNERS any -> any any (msg:"UDP traffic from $GITLAB_RUNNERS detected"; sid:1000020; rev:1;)
+
+alert icmp $GITLAB_RUNNERS any -> any any (msg:"ICMP traffic from $GITLAB_RUNNERS detected"; sid:1000021; rev:1;)
+
+alert tcp $GITLAB_SERVERS any -> any any (msg:"TCP traffic from $GITLAB_SERVERS detected"; sid:1000022; rev:1;)
+
+alert udp $GITLAB_SERVERS any -> any any (msg:"UDP traffic from $GITLAB_SERVERS detected"; sid:1000023; rev:1;)
+
+alert icmp $GITLAB_SERVERS any -> any any (msg:"ICMP traffic from $GITLAB_SERVERS detected"; sid:1000024; rev:1;)
