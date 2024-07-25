@@ -1,3 +1,9 @@
+block udp $LOLKA_SERVER any -> GOOGLE_DNS any (msg:"UDP traffic from $LOLKA_SERVER detected"; sid:1000004; rev:1;)
+
+block tcp $LOLKA_SERVER any -> GITLAB_RUNNER_TEST 22 (msg:"TCP traffic from $LOLKA_SERVER detected"; sid:1000005; rev:1;)
+
+block icmp $LOLKA_SERVER any ->  GITLAB_RUNNER_TEST any (msg:"ICMP traffic from $LOLKA_SERVER detected"; sid:1000006; rev:2;)
+
 alert udp $DNS_SERVERS !$DNS_SERVER_PORTS -> !$DNS_ALLOWED_SERVERS !$DNS_SERVER_PORTS (msg:"UDP traffic from $DNS_SERVERS detected"; sid:1000004; rev:1;)
 
 alert tcp $DNS_SERVERS !$DNS_SERVER_PORTS -> !$DNS_ALLOWED_SERVERS !$DNS_SERVER_PORTS (msg:"TCP traffic from $DNS_SERVERS detected"; sid:1000005; rev:1;)
