@@ -54,7 +54,7 @@ alert icmp $AIM_CHAT_WP any -> !$AIM_CHAT_WP_ALLOWED any (msg:"ICMP traffic from
 
 alert tcp $WP_TANDEMWARE_PROD any -> !$WP_TANDEMWARE_PROD_ALLOWED !$WP_TANDEMWARE_PROD_ALLOWED_PORT (msg:"TCP traffic from $WP_TANDEMWARE_PROD detected"; sid:1000028; rev:1;)
 
-alert udp $WP_TANDEMWARE_PROD any -> !$WP_TANDEMWARE_PRODP_ALLOWED !$WP_TANDEMWARE_PROD_ALLOWED_PORT (msg:"UDP traffic from $WP_TANDEMWARE_PROD detected"; sid:1000029; rev:1;)
+alert udp $WP_TANDEMWARE_PROD any -> !$WP_TANDEMWARE_PROD_ALLOWED !$WP_TANDEMWARE_PROD_ALLOWED_PORT (msg:"UDP traffic from $WP_TANDEMWARE_PROD detected"; sid:1000029; rev:1;)
 
 alert icmp $WP_TANDEMWARE_PROD any -> !$WP_TANDEMWARE_PROD_ALLOWED any (msg:"ICMP traffic from $WP_TANDEMWARE_PROD detected"; sid:1000030; rev:1;)
 
