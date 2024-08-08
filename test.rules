@@ -62,7 +62,7 @@ alert tcp $WP_AIMPROTECH_PROD any -> !$WP_AIMPROTECH_PROD_ALLOWED !$WP_AIMPROTEC
 
 alert udp $WP_AIMPROTECH_PROD any -> !$WP_AIMPROTECH_PROD_ALLOWED !$WP_AIMPROTECH_PROD_ALLOWED_PORT (msg:"UDP traffic from $WP_AIMPROTECH_PROD detected"; sid:1000032; rev:1;)
 
-alert icmp $WP_AIMPROTECH_PROD any -> !$WP_AIMPROTECH_PROD_ALLOWED any (msg:"ICMP traffic from $WP_AIMPROTECH_PROD detected"; sid:1000032; rev:1;)
+alert icmp $WP_AIMPROTECH_PROD any -> !$WP_AIMPROTECH_PROD_ALLOWED any (msg:"ICMP traffic from $WP_AIMPROTECH_PROD detected"; sid:1000033; rev:1;)
 
 alert tcp $WP_FRANKTEK_PROD any -> !$WP_FRANKTEK_PROD_ALLOWED !$WP_FRANKTEK_PROD_ALLOWED_PORT (msg:"TCP traffic from $WP_FRANKTEK_PROD detected"; sid:1000034; rev:1;)
 
