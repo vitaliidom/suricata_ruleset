@@ -70,8 +70,8 @@ alert udp $WP_FRANKTEK_PROD any -> !$WP_FRANKTEK_PROD_ALLOWED !$WP_FRANKTEK_PROD
 
 alert icmp $WP_FRANKTEK_PROD any -> !$WP_FRANKTEK_PROD_ALLOWED any (msg:"ICMP traffic from $WP_FRANKTEK_PROD detected"; sid:1000036; rev:1;)
 
-alert tcp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS !$MYSQL_LUZANOV_ALLOWED_PORTS (msg:"TCP traffic from $MYSQL_LUZANOV detected"; sid:1000037; rev:1;)
+#alert tcp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS !$MYSQL_LUZANOV_ALLOWED_PORTS (msg:"TCP traffic from $MYSQL_LUZANOV detected"; sid:1000037; rev:1;)
 
-alert udp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS !$MYSQL_LUZANOV_ALLOWED_PORTS (msg:"UDP traffic from $MYSQL_LUZANOV detected"; sid:1000038; rev:1;)
+#alert udp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS !$MYSQL_LUZANOV_ALLOWED_PORTS (msg:"UDP traffic from $MYSQL_LUZANOV detected"; sid:1000038; rev:1;)
 
-alert icmp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS any (msg:"ICMP traffic from $MYSQL_LUZANOV detected"; sid:1000039; rev:1;)
+#alert icmp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS any (msg:"ICMP traffic from $MYSQL_LUZANOV detected"; sid:1000039; rev:1;)
