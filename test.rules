@@ -46,26 +46,32 @@ alert udp $GITLAB_SERVERS any -> !$GITLAB_ALLOWED_SERVERS !$GITLAB_ALLOWED_PORTS
 
 alert icmp $GITLAB_SERVERS any -> !$GITLAB_ALLOWED_SERVERS any (msg:"ICMP traffic from $GITLAB_SERVERS detected"; sid:1000024; rev:1;)
 
-alert tcp $AIM_CHAT_WP any -> !$AIM_CHAT_WP_ALLOWED !$AIM_CHAT_WP_ALLOWED_PORT (msg:"TCP traffic from $AIM_CHAT_WP detected"; sid:1000025; rev:1;)
+alert tcp $AIM_CHAT_WP any -> !$AIM_CHAT_WP_ALLOWED !$AIM_CHAT_WP_ALLOWED_PORTS (msg:"TCP traffic from $AIM_CHAT_WP detected"; sid:1000025; rev:1;)
 
-alert udp $AIM_CHAT_WP any -> !$AIM_CHAT_WP_ALLOWED !$AIM_CHAT_WP_ALLOWED_PORT (msg:"UDP traffic from $AIM_CHAT_WP detected"; sid:1000026; rev:1;)
+alert udp $AIM_CHAT_WP any -> !$AIM_CHAT_WP_ALLOWED !$AIM_CHAT_WP_ALLOWED_PORTS (msg:"UDP traffic from $AIM_CHAT_WP detected"; sid:1000026; rev:1;)
 
 alert icmp $AIM_CHAT_WP any -> !$AIM_CHAT_WP_ALLOWED any (msg:"ICMP traffic from $AIM_CHAT_WP detected"; sid:1000027; rev:1;)
 
-alert tcp $WP_TANDEMWARE_PROD any -> !$WP_TANDEMWARE_PROD_ALLOWED !$WP_TANDEMWARE_PROD_ALLOWED_PORT (msg:"TCP traffic from $WP_TANDEMWARE_PROD detected"; sid:1000028; rev:1;)
+alert tcp $WP_TANDEMWARE_PROD any -> !$WP_TANDEMWARE_PROD_ALLOWED !$WP_TANDEMWARE_PROD_ALLOWED_PORTS (msg:"TCP traffic from $WP_TANDEMWARE_PROD detected"; sid:1000028; rev:1;)
 
-alert udp $WP_TANDEMWARE_PROD any -> !$WP_TANDEMWARE_PROD_ALLOWED !$WP_TANDEMWARE_PROD_ALLOWED_PORT (msg:"UDP traffic from $WP_TANDEMWARE_PROD detected"; sid:1000029; rev:1;)
+alert udp $WP_TANDEMWARE_PROD any -> !$WP_TANDEMWARE_PROD_ALLOWED !$WP_TANDEMWARE_PROD_ALLOWED_PORTS (msg:"UDP traffic from $WP_TANDEMWARE_PROD detected"; sid:1000029; rev:1;)
 
 alert icmp $WP_TANDEMWARE_PROD any -> !$WP_TANDEMWARE_PROD_ALLOWED any (msg:"ICMP traffic from $WP_TANDEMWARE_PROD detected"; sid:1000030; rev:1;)
 
-alert tcp $WP_AIMPROTECH_PROD any -> !$WP_AIMPROTECH_PROD_ALLOWED !$WP_AIMPROTECH_PROD_ALLOWED_PORT (msg:"TCP traffic from $WP_AIMPROTECH_PROD detected"; sid:1000031; rev:1;)
+alert tcp $WP_AIMPROTECH_PROD any -> !$WP_AIMPROTECH_PROD_ALLOWED !$WP_AIMPROTECH_PROD_ALLOWED_PORTS (msg:"TCP traffic from $WP_AIMPROTECH_PROD detected"; sid:1000031; rev:1;)
 
-alert udp $WP_AIMPROTECH_PROD any -> !$WP_AIMPROTECH_PROD_ALLOWED !$WP_AIMPROTECH_PROD_ALLOWED_PORT (msg:"UDP traffic from $WP_AIMPROTECH_PROD detected"; sid:1000032; rev:1;)
+alert udp $WP_AIMPROTECH_PROD any -> !$WP_AIMPROTECH_PROD_ALLOWED !$WP_AIMPROTECH_PROD_ALLOWED_PORTS (msg:"UDP traffic from $WP_AIMPROTECH_PROD detected"; sid:1000032; rev:1;)
 
 alert icmp $WP_AIMPROTECH_PROD any -> !$WP_AIMPROTECH_PROD_ALLOWED any (msg:"ICMP traffic from $WP_AIMPROTECH_PROD detected"; sid:1000033; rev:1;)
 
-alert tcp $WP_FRANKTEK_PROD any -> !$WP_FRANKTEK_PROD_ALLOWED !$WP_FRANKTEK_PROD_ALLOWED_PORT (msg:"TCP traffic from $WP_FRANKTEK_PROD detected"; sid:1000034; rev:1;)
+alert tcp $WP_FRANKTEK_PROD any -> !$WP_FRANKTEK_PROD_ALLOWED !$WP_FRANKTEK_PROD_ALLOWED_PORTS (msg:"TCP traffic from $WP_FRANKTEK_PROD detected"; sid:1000034; rev:1;)
 
-alert udp $WP_FRANKTEK_PROD any -> !$WP_FRANKTEK_PROD_ALLOWED !$WP_FRANKTEK_PROD_ALLOWED_PORT (msg:"UDP traffic from $WP_FRANKTEK_PROD detected"; sid:1000035; rev:1;)
+alert udp $WP_FRANKTEK_PROD any -> !$WP_FRANKTEK_PROD_ALLOWED !$WP_FRANKTEK_PROD_ALLOWED_PORTS (msg:"UDP traffic from $WP_FRANKTEK_PROD detected"; sid:1000035; rev:1;)
 
 alert icmp $WP_FRANKTEK_PROD any -> !$WP_FRANKTEK_PROD_ALLOWED any (msg:"ICMP traffic from $WP_FRANKTEK_PROD detected"; sid:1000036; rev:1;)
+
+alert tcp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS !$MYSQL_LUZANOV_ALLOWED_PORTS (msg:"TCP traffic from $MYSQL_LUZANOV detected"; sid:1000037; rev:1;)
+
+alert udp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS !$MYSQL_LUZANOV_ALLOWED_PORTS (msg:"UDP traffic from $MYSQL_LUZANOV detected"; sid:1000038; rev:1;)
+
+alert icmp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS any (msg:"ICMP traffic from $MYSQL_LUZANOV detected"; sid:1000039; rev:1;)
