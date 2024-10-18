@@ -20,19 +20,19 @@ alert udp $BTW_SERVERS any -> !$BTW_ALLOWED_SERVERS !$BTW_ALLOWED_PORTS (msg:"UD
 
 alert tcp $BTW_SERVERS !$BTW_ALLOWED_PORTS -> !$BTW_ALLOWED_SERVERS !$BTW_ALLOWED_PORTS (msg:"TCP traffic from $BTW_SERVERS detected"; sid:1000011; rev:1;)
 
-alert icmp $BTW_SERVERS any -> !$ZABBIX_SERVERS any (msg:"ICMP traffic from $BTW_SERVERS detected"; sid:1000012; rev:1;)
+alert icmp $BTW_SERVERS any -> !$PING_ALLOWED any (msg:"ICMP traffic from $BTW_SERVERS detected"; sid:1000012; rev:1;)
 
 alert tcp $WAZUH_SERVERS !$WAZUH_ALLOWED_PORTS -> !$WAZUH_ALLOWED_SERVERS !$WAZUH_ALLOWED_PORTS (msg:"TCP traffic from $WAZUH_SERVERS detected"; sid:1000013; rev:1;)
 
 alert udp $WAZUH_SERVERS any -> !$WAZUH_ALLOWED_SERVERS !$WAZUH_ALLOWED_PORTS (msg:"UDP traffic from $WAZUH_SERVERS detected"; sid:1000014; rev:1;)
 
-alert icmp $WAZUH_SERVERS any -> !$ZABBIX_SERVERS any (msg:"ICMP traffic from $WAZUH_SERVERS detected"; sid:1000015; rev:1;)
+alert icmp $WAZUH_SERVERS any -> !$PING_ALLOWED any (msg:"ICMP traffic from $WAZUH_SERVERS detected"; sid:1000015; rev:1;)
 
 alert tcp $NGINX_SERVERS !$NGINX_ALLOWED_PORTS -> !$NGINX_ALLOWED_SERVERS !$NGINX_ALLOWED_PORTS (msg:"TCP traffic from $NGINX_SERVERS detected"; sid:1000016; rev:1;)
 
 alert udp $NGINX_SERVERS any -> !$NGINX_ALLOWED_SERVERS !$NGINX_ALLOWED_PORTS (msg:"UDP traffic from $NGINX_SERVERS detected"; sid:1000017; rev:1;)
 
-alert icmp $NGINX_SERVERS any -> !$ZABBIX_SERVERS any (msg:"ICMP traffic from $NGINX_SERVERS detected"; sid:1000018; rev:1;)
+alert icmp $NGINX_SERVERS any -> !$PING_ALLOWED any (msg:"ICMP traffic from $NGINX_SERVERS detected"; sid:1000018; rev:1;)
 
 #alert tcp $GITLAB_RUNNERS any -> !$GITLAB_RUNNERS_ALLOWED !$GITLAB_RUNNERS_ALLOWED_PORTS (msg:"TCP traffic from $GITLAB_RUNNERS detected"; sid:1000019; rev:1;)
 
