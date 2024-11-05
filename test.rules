@@ -76,6 +76,13 @@ alert icmp $WP_FRANKTEK_PROD any -> !$WP_FRANKTEK_PROD_ALLOWED any (msg:"ICMP tr
 
 #alert icmp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS any (msg:"ICMP traffic from $MYSQL_LUZANOV detected"; sid:1000039; rev:1;)
 
+alert tcp $VPN_SERVERS any -> any !$VPN_ALLOWED_PORTS (msg:"TCP traffic from $VPN_SERVERS detected"; sid:1000034; rev:1;)
+
+alert udp $VPN_SERVERS any -> any !$VPN_ALLOWED_PORTS (msg:"UDP traffic from $VPN_SERVERS detected"; sid:1000035; rev:1;)
+
+alert icmp $VPN_SERVERS any -> any any (msg:"ICMP traffic from $VPN_SERVERS detected"; sid:1000036; rev:1;)
+
+
 # opnsense-suricata-nmaps
 # OPNsense's Suricata IDS/IPS Nmap Detection Rules
 # v. 1.4.2 / June 8th 2023 by Aleksi Bovellan
