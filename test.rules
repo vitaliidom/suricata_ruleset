@@ -80,7 +80,7 @@ alert tcp $VPN_USERS_NET any -> $HOME_NET $VPN_SCANNED_PORTS (msg:"TCP traffic f
 
 alert udp $VPN_USERS_NET any -> $HOME_NET $VPN_SCANNED_PORTS (msg:"UDP traffic from $VPN_USERS_NET detected"; sid:1000041; rev:1;)
 
-alert icmp $VPN_USERS_NET any -> $HOME_NET any (msg:"ICMP traffic from $VPN_SERVERS detected"; sid:1000042; rev:1;)
+alert icmp $VPN_USERS_NET any -> $HOME_NET any (msg:"ICMP traffic from $VPN_USERS_NET detected"; sid:1000042; rev:1;)
 
 
 # opnsense-suricata-nmaps
