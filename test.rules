@@ -76,11 +76,11 @@ alert icmp $WP_FRANKTEK_PROD any -> !$WP_FRANKTEK_PROD_ALLOWED any (msg:"ICMP tr
 
 #alert icmp $MYSQL_LUZANOV any -> !$MYSQL_LUZANOV_ALLOWED_SERVERS any (msg:"ICMP traffic from $MYSQL_LUZANOV detected"; sid:1000039; rev:1;)
 
-#alert tcp $VPN_SERVERS any -> !$VPN_SERVERS_ALLOWED !$VPN_ALLOWED_PORTS (msg:"TCP traffic from $VPN_SERVERS detected"; sid:1000040; rev:1;)
+alert tcp $VPN_SERVERS any -> $HOME_NET $VPN_SCANNED_PORTS (msg:"TCP traffic from $VPN_SERVERS detected"; sid:1000040; rev:1;)
 
-#alert udp $VPN_SERVERS any -> !$VPN_SERVERS_ALLOWED !$VPN_ALLOWED_PORTS (msg:"UDP traffic from $VPN_SERVERS detected"; sid:1000041; rev:1;)
+alert udp $VPN_SERVERS any -> $HOME_NET $VPN_SCANNED_PORTS (msg:"UDP traffic from $VPN_SERVERS detected"; sid:1000041; rev:1;)
 
-#alert icmp $VPN_SERVERS any -> !$VPN_SERVERS_ALLOWED any (msg:"ICMP traffic from $VPN_SERVERS detected"; sid:1000042; rev:1;)
+alert icmp $VPN_SERVERS any -> $HOME_NET any (msg:"ICMP traffic from $VPN_SERVERS detected"; sid:1000042; rev:1;)
 
 
 # opnsense-suricata-nmaps
