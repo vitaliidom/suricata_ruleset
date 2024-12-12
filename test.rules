@@ -96,11 +96,11 @@ alert udp $T_POT_LOG4POT any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLO
 
 alert icmp $T_POT_LOG4POT any -> !$T_POT_HONEYPOTS_ALLOWED any (msg:"ICMP traffic from $T_POT_LOG4POT detected"; sid:1000048; rev:1;)
 
-alert tcp $T_POT_WORDPOT any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"TCP traffic from $T_POT_WORDPOT detected"; sid:1000049; rev:1;)
+alert tcp $T_POT_WORDPOT any -> !$T_POT_WORDPOT_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"TCP traffic from $T_POT_WORDPOT detected"; sid:1000049; rev:1;)
 
-alert udp $T_POT_WORDPOT any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"UDP traffic from $T_POT_WORDPOT detected"; sid:1000050; rev:1;)
+alert udp $T_POT_WORDPOT any -> !$T_POT_WORDPOT_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"UDP traffic from $T_POT_WORDPOT detected"; sid:1000050; rev:1;)
 
-alert icmp $T_POT_WORDPOT any -> !$T_POT_HONEYPOTS_ALLOWED any (msg:"ICMP traffic from $T_POT_WORDPOT detected"; sid:1000051; rev:1;)
+alert icmp $T_POT_WORDPOT any -> !$T_POT_WORDPOT_ALLOWED any (msg:"ICMP traffic from $T_POT_WORDPOT detected"; sid:1000051; rev:1;)
 
 alert tcp $T_POT_HERALDING any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"TCP traffic from $T_POT_HERALDING detected"; sid:1000052; rev:1;)
 
@@ -116,12 +116,31 @@ alert icmp $T_POT_QHONEYPOTS any -> !$T_POT_HONEYPOTS_ALLOWED any (msg:"ICMP tra
 
 #
 
-alert tcp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_HONEYPOTS any (msg:"TCP traffic from $T_POT_HONEYPOTS detected"; sid:1000058; rev:1;)
+alert tcp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_LOG4POT any (msg:"TCP traffic to $T_POT_LOG4POT detected"; sid:1000058; rev:1;)
 
-alert udp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_HONEYPOTS any (msg:"UDP traffic from $T_POT_HONEYPOTS detected"; sid:1000059; rev:1;)
+alert udp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_LOG4POT any (msg:"UDP traffic to $T_POT_LOG4POT detected"; sid:1000059; rev:1;)
 
-alert icmp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_HONEYPOTS any (msg:"ICMP traffic from $T_POT_HONEYPOTS detected"; sid:1000060; rev:1;)
+alert icmp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_LOG4POT any (msg:"ICMP traffic to $T_POT_LOG4POT detected"; sid:1000060; rev:1;)
 
+alert tcp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_HERALDING any (msg:"TCP traffic to $T_POT_HERALDING detected"; sid:1000061; rev:1;)
+
+alert udp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_HERALDING any (msg:"UDP traffic to $T_POT_HERALDING detected"; sid:1000062; rev:1;)
+
+alert icmp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_HERALDING any (msg:"ICMP traffic to $T_POT_HERALDING detected"; sid:1000063; rev:1;)
+
+alert tcp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_QHONEYPOTS any (msg:"TCP traffic to $T_POT_QHONEYPOTS detected"; sid:1000064; rev:1;)
+
+alert udp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_QHONEYPOTS any (msg:"UDP traffic to $T_POT_QHONEYPOTS detected"; sid:1000065; rev:1;)
+
+alert icmp !$T_POT_HONEYPOTS_ALLOWED any -> $T_POT_QHONEYPOTS any (msg:"ICMP traffic to $T_POT_QHONEYPOTS detected"; sid:1000066; rev:1;)
+
+alert tcp !$T_POT_WORDPOT_ALLOWED any -> $T_POT_WORDPOT any (msg:"TCP traffic to $T_POT_WORDPOT detected"; sid:1000067; rev:1;)
+
+alert udp !$T_POT_WORDPOT_ALLOWED any -> $T_POT_WORDPOT any (msg:"UDP traffic to $T_POT_WORDPOT detected"; sid:1000068; rev:1;)
+
+alert icmp !$T_POT_WORDPOT_ALLOWED any -> $T_POT_WORDPOT any (msg:"ICMP traffic to $T_POT_WORDPOT detected"; sid:1000069; rev:1;)
+
+#
 
 # opnsense-suricata-nmaps
 # OPNsense's Suricata IDS/IPS Nmap Detection Rules
