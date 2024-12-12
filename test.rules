@@ -82,6 +82,37 @@ alert udp $VPN_USERS_NET any -> $HOME_NET $VPN_SCANNED_PORTS (msg:"UDP traffic f
 
 alert icmp $VPN_USERS_NET any -> $HOME_NET any (msg:"ICMP traffic from $VPN_USERS_NET detected"; sid:1000042; rev:1;)
 
+alert tcp $T_POT_SERVER any -> !$T_POT_SERVER_ALLOWED !$T_POT_SERVER_ALLOWED_PORTS (msg:"TCP traffic from $T_POT_SERVER detected"; sid:1000043; rev:1;)
+
+alert udp $T_POT_SERVER any -> !$T_POT_SERVER_ALLOWED !$T_POT_SERVER_ALLOWED_PORTS (msg:"UDP traffic from $T_POT_SERVER detected"; sid:1000044; rev:1;)
+
+alert icmp $T_POT_SERVER any -> !$T_POT_SERVER_ALLOWED any (msg:"ICMP traffic from $T_POT_SERVER detected"; sid:1000045; rev:1;)
+
+alert tcp $T_POT_LOG4POT any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"TCP traffic from $T_POT_SERVER detected"; sid:1000046; rev:1;)
+
+alert udp $T_POT_LOG4POT any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"UDP traffic from $T_POT_SERVER detected"; sid:1000047; rev:1;)
+
+alert icmp $T_POT_LOG4POT any -> !$T_POT_HONEYPOTS_ALLOWED any (msg:"ICMP traffic from $T_POT_SERVER detected"; sid:1000048; rev:1;)
+
+alert tcp $T_POT_WORDPOT any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"TCP traffic from $T_POT_SERVER detected"; sid:1000049; rev:1;)
+
+alert udp $T_POT_WORDPOT any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"UDP traffic from $T_POT_SERVER detected"; sid:1000050; rev:1;)
+
+alert icmp $T_POT_WORDPOT any -> !$T_POT_HONEYPOTS_ALLOWED any (msg:"ICMP traffic from $T_POT_SERVER detected"; sid:1000051; rev:1;)
+
+alert tcp $T_POT_HERALDING any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"TCP traffic from $T_POT_SERVER detected"; sid:1000052; rev:1;)
+
+alert udp $T_POT_HERALDING any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"UDP traffic from $T_POT_SERVER detected"; sid:1000053; rev:1;)
+
+alert icmp $T_POT_HERALDING any -> !$T_POT_HONEYPOTS_ALLOWED any (msg:"ICMP traffic from $T_POT_SERVER detected"; sid:1000054; rev:1;)
+
+alert tcp $T_POT_QHONEYPOTS any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"TCP traffic from $T_POT_SERVER detected"; sid:1000055; rev:1;)
+
+alert udp $T_POT_QHONEYPOTS any -> !$T_POT_HONEYPOTS_ALLOWED !$T_POT_HONEYPOTS_ALLOWED_PORTS (msg:"UDP traffic from $T_POT_SERVER detected"; sid:1000056; rev:1;)
+
+alert icmp $T_POT_QHONEYPOTS any -> !$T_POT_HONEYPOTS_ALLOWED any (msg:"ICMP traffic from $T_POT_SERVER detected"; sid:1000057; rev:1;)
+
+
 
 # opnsense-suricata-nmaps
 # OPNsense's Suricata IDS/IPS Nmap Detection Rules
