@@ -84,7 +84,7 @@ alert icmp $VPN_USERS_NET any -> $HOME_NET any (msg:"ICMP traffic from $VPN_USER
 
 #
 
-alert tcp $T_POT_SERVER any -> !$T_POT_SERVER_ALLOWED !$T_POT_SERVER_ALLOWED_PORTS (msg:"TCP traffic from $T_POT_SERVER detected"; sid:1000043; rev:1;)
+alert tcp $T_POT_SERVER !$T_POT_SERVER_ALLOWED_PORTS -> !$T_POT_SERVER_ALLOWED !$T_POT_SERVER_ALLOWED_PORTS (msg:"TCP traffic from $T_POT_SERVER detected"; sid:1000043; rev:1;)
 
 alert udp $T_POT_SERVER any -> !$T_POT_SERVER_ALLOWED !$T_POT_SERVER_ALLOWED_PORTS (msg:"UDP traffic from $T_POT_SERVER detected"; sid:1000044; rev:1;)
 
